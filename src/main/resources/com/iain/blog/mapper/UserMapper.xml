@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.iain.blog.mapper.UserMapper">
+    <insert id="insertOne" parameterType="com.iain.blog.domain.UserInfo">
+        INSERT INTO T_SYS_USER(PK_ID, USER_NAM, PASS_WORD, TEL_NO, REM, SEX, CRT_USR, CRT_TM, UPT_USR, UPT_TM) 
+        VALUES (#{pkId},#{userNam},#{passWord]},#{telNo},#{rem},#{sex},#{crtUsr},#{crtTm},#{uptUsr},#{uptTm}
+        )
+    </insert>
+    <select id="findByMap" resultType="com.iain.blog.domain.UserInfo" >
+        select PK_ID, USER_NAM, PASS_WORD, TEL_NO, REM, SEX, CRT_USR, CRT_TM, UPT_USR, UPT_TM from T_SYS_USER
+        <where>
+            <if test="userNam!=null">
+                AND USER_NAM = #{userNam}
+            </if>
+        </where>
+    </select>
+    <select id="findAll" resultType="com.iain.blog.domain.UserInfo">
+        select PK_ID, USER_NAM, PASS_WORD, TEL_NO, REM, SEX, CRT_USR, CRT_TM, UPT_USR, UPT_TM from T_SYS_USER
+    </select>
+</mapper>

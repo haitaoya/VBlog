@@ -1,8 +1,7 @@
-package com.iain.springdemo.test;
+package com.iain.blog.test;
 
 
-import com.iain.springdemo.domain.BaseBean;
-import com.iain.springdemo.domain.PdtInfo;
+import com.iain.blog.domain.PdtInfo;
 import org.junit.Test;
 
 import java.text.SimpleDateFormat;
