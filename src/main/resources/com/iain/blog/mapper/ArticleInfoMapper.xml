@@ -1,20 +1,55 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-        <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.iain.blog.mapper.ArticleCategoryMapper">
-<insert id="insertOne" parameterType="com.iain.blog.mapper.ArticleCategoryMapper">
-    INSERT INTO T_ARTICLE_TYP(PK_ID, TYP_NAM, SUPER_TYP_ID, REJECT_REASON, CHK_USR, CHK_TM, CRT_USR, CRT_TM, UPT_USR, UPT_TM)
-    VALUES (#{pkId}, #{typNam}, #{superTypId}, #{rejectReason}, #{chkUsr}, #{chkTm}, #{crtUsr},#{crtTm},#{uptUsr},#{uptTm}
-    )
-</insert>
-<select id="findByMap" resultType="com.iain.blog.domain.ArticleCategory" >
-    select PK_ID, TYP_NAM, SUPER_TYP_ID, REJECT_REASON, CHK_USR, CHK_TM, CRT_USR, CRT_TM, UPT_USR, UPT_TM from T_ARTICLE_TYP
-    <where>
-        <if test="pdtNam!=null">
-            AND PK_ID = #{pkId}
-        </if>
-    </where>
-</select>
-<select id="findAll" resultType="com.iain.blog.domain.ArticleCategory">
-    select PK_ID, TYP_NAM, SUPER_TYP_ID, REJECT_REASON, CHK_USR, CHK_TM, CRT_USR, CRT_TM, UPT_USR, UPT_TM from T_ARTICLE_TYP
-</select>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.iain.blog.mapper.ArticleInfoMapper">
+    <insert id="insertOne" parameterType="com.iain.blog.domain.ArticleInfo">
+        INSERT INTO T_ARTICLE_INFO(PK_ID, ARTICLE_TITLE, ARTICLE_CONTENT, ARTICLE_STS, CATEGORY_ID, REJECT_REASON,
+        CHK_USR, CHK_TM, CRT_USR, CRT_TM, UPT_USR, UPT_TM) VALUES
+        (#{pkId}, #{articleTitle}, #{articleContent}, #{articleSts}, #{categoryId}, #{rejectReason}, #{chkUsr},
+        #{chkTm}, #{crtUsr},#{crtTm},#{uptUsr},#{uptTm}
+        )
+    </insert>
+    <select id="findByMap" resultType="com.iain.blog.domain.ArticleInfo">
+        select PK_ID, ARTICLE_TITLE, ARTICLE_CONTENT, ARTICLE_STS, CATEGORY_ID, REJECT_REASON, CHK_USR, CHK_TM, CRT_USR,
+        CRT_TM, UPT_USR, UPT_TM from T_ARTICLE_INFO
+        <where>
+            <if test="pdtNam!=null">
+                AND PK_ID = #{pkId}
+            </if>
+        </where>
+    </select>
+    <select id="findAll" resultType="com.iain.blog.domain.ArticleInfo">
+        SELECT PK_ID, ARTICLE_TITLE, ARTICLE_CONTENT, ARTICLE_STS, TYP_ID, REJECT_REASON, CHK_USR, CHK_TM, CRT_USR,
+        CRT_TM, UPT_USR, UPT_TM from T_ARTICLE_INFO
+    </select>
+    <update id="update" parameterType="com.iain.blog.domain.ArticleInfo">
+        UPDATE T_ARTICLE_INFO
+        <set>
+            <if test="articleTitle != null">ARTICLE_TITLE = #{articleTitle}</if>
+        </set>
+        <set>
+            <if test="articleContent != null">ARTICLE_CONTENT = #{articleContent}</if>
+        </set>
+        <set>
+            <if test="articleSts != null">ARTICLE_STS = #{articleSts}</if>
+        </set>
+        <set>
+            <if test="categoryId != null">CATEGORY_ID = #{categoryId}</if>
+        </set>
+        <set>
+            <if test="rejectReason != null">REJECT_REASON = #{rejectReason}</if>
+        </set>
+        <set>
+            <if test="chkUsr != null">CHK_USR = #{chkUsr}</if>
+        </set>
+        <set>
+            <if test="chkTm != null">CHK_TM = #{chkTm}</if>
+        </set>
+        <set>
+            <if test="uptUsr != null">UPT_USR = #{uptUsr}</if>
+        </set>
+        <set>
+            <if test="uptTm != null">UPT_TM = #{uptTm}</if>
+        </set>
+        where PK_ID = #{pkId}
+    </update>
 </mapper>

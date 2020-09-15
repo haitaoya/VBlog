@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
         <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.iain.blog.mapper.ArticleCategoryMapper">
-<insert id="insertOne" parameterType="com.iain.blog.mapper.ArticleCategoryMapper">
+<insert id="insertOne" parameterType="com.iain.blog.domain.ArticleCategory">
     INSERT INTO T_ARTICLE_CATEGORY(PK_ID, CATEGORY_NAM, SUPER_CATEGORY_ID, REJECT_REASON, CHK_USR, CHK_TM, CRT_USR, CRT_TM, UPT_USR, UPT_TM)
     VALUES (#{pkId}, #{categoryNam}, #{superCategoryId}, #{rejectReason}, #{chkUsr}, #{chkTm}, #{crtUsr},#{crtTm},#{uptUsr},#{uptTm}
     )
