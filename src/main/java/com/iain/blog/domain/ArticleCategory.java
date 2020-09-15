@@ -11,7 +11,7 @@ import java.util.Date;
  * @Created by wht
  */
 @Data
-public class ArticleTyp {
+public class ArticleCategory {
     private String pkId;
     private String typNam;
     private String superTypId;
