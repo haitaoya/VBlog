@@ -20,7 +20,7 @@ public class Result {
      */
     private Object data;
 
-    Result(int code, String message, Object data) {
+    public Result(int code, String message, Object data) {
         this.code = code;
         this.message = message;
         this.data = data;

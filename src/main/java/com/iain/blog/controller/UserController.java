@@ -5,6 +5,7 @@ import com.iain.blog.service.UserService;
 import com.iain.blog.result.ResultFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -20,8 +21,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class UserController {
     @Autowired
     private UserService userService;
-
-    @RequestMapping(value = "/findAll", method = RequestMethod.POST)
+//    @CrossOrigin 跨域问题前端处理
+    @RequestMapping(value = "/findAll")
     @ResponseBody
     public Result getAllUser(){
         return ResultFactory.buildSuccessResult(userService.findAll());

@@ -11,15 +11,11 @@ import java.util.Date;
  * @Created by wht
  */
 @Data
-public class ArticleCategory {
+public class ArticleCategory extends BaseBean{
     private String pkId;
     private String typNam;
     private String superTypId;
     private String rejectReason;
     private String chkUsr;
     private Date chkTm;
-    private String crtUsr;
-    private Date crtTm;
-    private String uptUsr;
-    private Date uptTm;
 }
