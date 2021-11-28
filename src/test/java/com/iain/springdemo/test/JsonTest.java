@@ -4,6 +4,7 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.serializer.SerializerFeature;
 import com.iain.blog.domain.BaseBean;
+import com.iain.blog.dto.PdtDto;
 import com.iain.blog.dto.TestBean;
 import org.junit.Test;
 
@@ -43,7 +44,7 @@ public class JsonTest {
 //        }
 //        };
 //        Object o1 = filter.get("111");
-        BaseBean baseBean = new BaseBean();
+        BaseBean baseBean = new PdtDto();
         baseBean.setCrtUsr("wwwww");
         baseBean.setCrtTm(new Date());
         String s = JSONObject.toJSONString(baseBean, SerializerFeature.WriteMapNullValue, SerializerFeature.WriteDateUseDateFormat);

@@ -16,7 +16,7 @@ import java.util.Map;
  * @Created by wht
  */
 @Data
-public class BaseBean {
+public abstract class BaseBean {
 //    @JsonFormat(pattern="yyyy-MM-dd",timezone = "GMT+8")
     @JSONField(format = "yyyy-MM")
     public Date crtTm;

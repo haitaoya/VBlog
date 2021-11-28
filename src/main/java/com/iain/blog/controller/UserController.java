@@ -4,6 +4,7 @@ import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.serializer.SerializerFeature;
 import com.fasterxml.jackson.databind.jsonFormatVisitors.JsonObjectFormatVisitor;
 import com.iain.blog.domain.BaseBean;
+import com.iain.blog.dto.PdtDto;
 import com.iain.blog.listener.Mains;
 import com.iain.blog.result.Result;
 import com.iain.blog.service.UserService;
@@ -42,7 +43,7 @@ public class UserController {
 
     @RequestMapping(value = "/testJson")
     public void testJson(){
-        BaseBean baseBean = new BaseBean();
+        BaseBean baseBean = new PdtDto();
         baseBean.setCrtTm(new Date());
         String s = JSONObject.toJSONString(baseBean, SerializerFeature.WriteDateUseDateFormat);
         System.out.println(s);
