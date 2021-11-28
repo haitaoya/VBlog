@@ -1,0 +1,5 @@
+T_DDL_A
+T_DDL_B
+T_DDL_C
+T_DDL_D
+T_DDL_E
